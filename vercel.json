@@ -1,0 +1,86 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/About.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Portfolio.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/Portfolio%20Websites.html",
+      "destination": "/portfolio-websites",
+      "permanent": true
+    },
+    {
+      "source": "/Portfolio Websites.html",
+      "destination": "/portfolio-websites",
+      "permanent": true
+    },
+    {
+      "source": "/Industry.html",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/Pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/Process.html",
+      "destination": "/process",
+      "permanent": true
+    },
+    {
+      "source": "/Location.html",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
+      "source": "/Web%20Development%20Agency%20India.html",
+      "destination": "/web-development-agency-india",
+      "permanent": true
+    },
+    {
+      "source": "/Web Development Agency India.html",
+      "destination": "/web-development-agency-india",
+      "permanent": true
+    },
+    {
+      "source": "/Blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/Blog%20Post.html",
+      "destination": "/blog/website-cost-in-india",
+      "permanent": true
+    },
+    {
+      "source": "/Blog Post.html",
+      "destination": "/blog/website-cost-in-india",
+      "permanent": true
+    },
+    {
+      "source": "/FAQ.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/Contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/Legal.html",
+      "destination": "/legal",
+      "permanent": true
+    }
+  ]
+}
