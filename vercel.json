@@ -117,11 +117,6 @@
       "permanent": true
     },
     {
-      "source": "/blog/website-cost-in-india.html",
-      "destination": "/blog/website-cost-in-india",
-      "permanent": true
-    },
-    {
       "source": "/FAQ.html",
       "destination": "/faq",
       "permanent": true
@@ -149,6 +144,11 @@
     {
       "source": "/legal.html",
       "destination": "/legal",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug.html",
+      "destination": "/blog/:slug",
       "permanent": true
     }
   ],
@@ -190,10 +190,6 @@
       "destination": "/blog/index.html"
     },
     {
-      "source": "/blog/website-cost-in-india",
-      "destination": "/blog/website-cost-in-india.html"
-    },
-    {
       "source": "/faq",
       "destination": "/faq.html"
     },
@@ -204,6 +200,10 @@
     {
       "source": "/legal",
       "destination": "/legal.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
     }
   ]
 }

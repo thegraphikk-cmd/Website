@@ -1,0 +1,70 @@
+<!--
+{
+  "title": "How to set up GST on Shopify in India (CGST, SGST and IGST)",
+  "slug": "shopify-gst-setup-india",
+  "date": "2026-10-24",
+  "category": "ecom",
+  "mins": 8,
+  "keyword": "shopify gst setup india",
+  "description": "How to configure GST on a Shopify store in India: tax-inclusive prices, CGST + SGST for same-state orders, IGST for other states, multiple GST slabs, HSN codes and GST-compliant invoices.",
+  "cta": { "text": "Our store packages include shipping and GST setup, tested with real orders before launch.", "href": "/industries#ecommerce", "label": "E-commerce stores" }
+}
+-->
+<p>GST is one of the most common headaches for Indian Shopify stores. Shopify was built for a world of single sales-tax rates, while GST splits tax differently depending on where the customer is, and many stores sell products in more than one GST slab. Here's how stores typically set it up.</p>
+<blockquote>This is a practical setup guide, not tax advice. Rates, HSN codes and invoice requirements depend on your products and registration. Confirm your configuration with your CA before going live.</blockquote>
+
+<h2>The GST basics your store has to handle</h2>
+<ul>
+  <li><strong>Same-state orders</strong> (customer in your registered state): tax is split equally into CGST and SGST. For 18% GST, that's 9% CGST + 9% SGST.</li>
+  <li><strong>Other-state orders</strong>: the full rate is charged as IGST, for example 18% IGST.</li>
+  <li><strong>Different products, different slabs</strong>: clothing, cosmetics and electronics can fall under different rates.</li>
+  <li><strong>Invoices</strong> need your GSTIN, HSN codes and the tax breakdown.</li>
+</ul>
+
+<h2>Step 1: Add your GST details in Shopify</h2>
+<p>In <strong>Settings → Taxes and duties</strong>, select India and enter your GSTIN. Make sure your store address under <strong>Settings → General</strong> matches your GST registration, because the home state determines when CGST + SGST applies.</p>
+
+<h2>Step 2: Decide on tax-inclusive prices</h2>
+<p>Indian shoppers expect prices to include GST (MRP-style pricing). In tax settings, turn on <strong>"All prices include tax"</strong> so the price customers see is the price they pay, and the tax is calculated within it.</p>
+
+<h2>Step 3: Handle CGST/SGST vs IGST</h2>
+<p>Shopify's India tax settings let you set tax rates and regional overrides. A common approach used by Indian stores is:</p>
+<ol>
+  <li>Set the base rate to your most common GST rate.</li>
+  <li>Add an override for your home state so the tax shows as CGST + SGST.</li>
+  <li>Other states are charged the full rate as IGST.</li>
+</ol>
+<p>Shopify's interface changes over time, so follow the current options in your admin and check the result on test orders.</p>
+
+<h2>Step 4: Products in different GST slabs</h2>
+<p>If you sell, say, some products at 5% and others at 18%, set the store's default to one rate and use <strong>product-level tax overrides</strong> through collections for the others. For example, create a collection called "GST 5%" containing those products, then add a tax override for that collection.</p>
+<p>Keep this tidy: every new product must go into the right collection, or it will be taxed at the default rate.</p>
+
+<h2>Step 5: HSN codes</h2>
+<p>Add the HSN code to each product. Shopify has a field for the harmonised system code in each product's shipping or customs section, and most GST invoice apps read it from there or from a product metafield.</p>
+
+<h2>Step 6: GST-compliant invoices</h2>
+<p>Shopify's default order emails aren't GST invoices. Most Indian stores install a GST invoice app that generates numbered invoices with:</p>
+<ul>
+  <li>Your business name, address and GSTIN</li>
+  <li>Customer's name and address (and GSTIN for B2B orders)</li>
+  <li>Invoice number and date</li>
+  <li>HSN code, quantity, taxable value and tax split per item</li>
+  <li>Place of supply</li>
+</ul>
+<p>Choose an app that numbers invoices sequentially, supports B2B GSTINs and exports data for your filings.</p>
+
+<h2>Step 7: Shipping charges and COD fees</h2>
+<p>GST generally applies to shipping charges you collect too, usually at the rate of the goods. Check how your tax settings handle shipping, and whether your COD fee app includes tax.</p>
+
+<h2>Step 8: Test before launch</h2>
+<p>Place test orders with addresses in your state and in another state, for products in each slab, with and without COD. Check the checkout total, the order's tax lines and the invoice. Then send a few sample invoices to your CA.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+  <li>Prices entered excluding tax while "prices include tax" is on (or the reverse)</li>
+  <li>Store address in a different state from the GST registration</li>
+  <li>New products added without the right tax collection</li>
+  <li>Using order confirmation emails as invoices</li>
+</ul>
+<p>Still choosing a platform? Our <a href="/blog/shopify-vs-woocommerce-india">Shopify vs WooCommerce comparison</a> covers how each handles GST.</p>
