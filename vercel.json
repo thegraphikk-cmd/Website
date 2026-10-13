@@ -1,14 +1,28 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/About.html",
       "destination": "/about",
       "permanent": true
     },
     {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
       "source": "/Portfolio.html",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
       "destination": "/portfolio",
       "permanent": true
     },
@@ -23,7 +37,17 @@
       "permanent": true
     },
     {
+      "source": "/portfolio-websites.html",
+      "destination": "/portfolio-websites",
+      "permanent": true
+    },
+    {
       "source": "/Industry.html",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries.html",
       "destination": "/industries",
       "permanent": true
     },
@@ -33,12 +57,27 @@
       "permanent": true
     },
     {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
       "source": "/Process.html",
       "destination": "/process",
       "permanent": true
     },
     {
+      "source": "/process.html",
+      "destination": "/process",
+      "permanent": true
+    },
+    {
       "source": "/Location.html",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
+      "source": "/locations.html",
       "destination": "/locations",
       "permanent": true
     },
@@ -53,7 +92,17 @@
       "permanent": true
     },
     {
+      "source": "/web-development-agency-india.html",
+      "destination": "/web-development-agency-india",
+      "permanent": true
+    },
+    {
       "source": "/Blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
       "destination": "/blog",
       "permanent": true
     },
@@ -68,7 +117,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/website-cost-in-india.html",
+      "destination": "/blog/website-cost-in-india",
+      "permanent": true
+    },
+    {
       "source": "/FAQ.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
       "destination": "/faq",
       "permanent": true
     },
@@ -78,9 +137,73 @@
       "permanent": true
     },
     {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/Legal.html",
       "destination": "/legal",
       "permanent": true
+    },
+    {
+      "source": "/legal.html",
+      "destination": "/legal",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio.html"
+    },
+    {
+      "source": "/portfolio-websites",
+      "destination": "/portfolio-websites.html"
+    },
+    {
+      "source": "/industries",
+      "destination": "/industries.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/process",
+      "destination": "/process.html"
+    },
+    {
+      "source": "/locations",
+      "destination": "/locations.html"
+    },
+    {
+      "source": "/web-development-agency-india",
+      "destination": "/web-development-agency-india.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/website-cost-in-india",
+      "destination": "/blog/website-cost-in-india.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/legal",
+      "destination": "/legal.html"
     }
   ]
 }
