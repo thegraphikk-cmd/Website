@@ -10,6 +10,11 @@
 // Only posts whose date is today or earlier (India time) are published. Running the
 // script writes blog/<slug>.html for each published post, blog/index.html and sitemap.xml.
 // Set BLOG_TODAY=YYYY-MM-DD to preview a different day.
+//
+// Landing pages in content/pages/*.html use the same layout and are written to the
+// site root as <slug>.html. Their front matter has slug, title, description, kicker,
+// h1, lede, an optional cta and an optional faq list of { q, a } (rendered with
+// FAQPage schema).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,6 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content', 'posts');
+const PAGES_SRC = path.join(ROOT, 'content', 'pages');
 const OUT = path.join(ROOT, 'blog');
 const SITE = 'https://thegraphikk.com';
 const AUTHOR = 'Kavin Arulraj';
@@ -29,7 +35,8 @@ const CATS = { guides: 'Web design guides', seo: 'SEO & performance', ecom: 'E-c
 const STATIC_PAGES = [
   ['/', '1.0'], ['/about', '0.8'], ['/portfolio', '0.8'], ['/portfolio-websites', '0.8'],
   ['/industries', '0.8'], ['/pricing', '0.8'], ['/process', '0.6'], ['/locations', '0.7'],
-  ['/web-development-agency-india', '0.7'], ['/blog', '0.7'], ['/faq', '0.6'],
+  ['/web-development-agency-india', '0.7'], ['/web-development-company-chennai', '0.9'],
+  ['/blog', '0.7'], ['/faq', '0.6'],
   ['/contact', '0.7'], ['/legal', '0.3'],
 ];
 
@@ -168,11 +175,11 @@ a:hover{color:var(--blue)}
 @media (max-width:899px){.sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:8px;padding:6px;border-radius:999px;background:rgba(17,17,17,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.sticky a{flex:1;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}.sticky a.q{flex:1.2;background:var(--yellow);color:var(--ink)}.ftr{padding-bottom:96px}}
 `;
 
-function header() {
+function header(active = '/blog') {
   const links = [['/portfolio', 'Portfolio'], ['/industries', 'Industries'], ['/pricing', 'Pricing'], ['/about', 'About'], ['/blog', 'Blog']];
   return `<header class="hdr"><div class="bar">
   <a class="logo" href="/"><img src="/assets/img/logo.png" alt="The Graphikk pen-nib logo" width="26" height="24"><span>The Graphikk</span></a>
-  <nav class="nav mono" aria-label="Main">${links.map(([h, t]) => `<a href="${h}"${h === '/blog' ? ' class="on"' : ''}>${t}</a>`).join('')}</nav>
+  <nav class="nav mono" aria-label="Main">${links.map(([h, t]) => `<a href="${h}"${h === active ? ' class="on"' : ''}>${t}</a>`).join('')}</nav>
   <div style="display:flex;gap:6px;align-items:center">
     <a class="quote mono" href="/contact">Get a Quote</a>
     <details class="menu"><summary aria-label="Menu"><i></i><i></i></summary><nav aria-label="Mobile">${links.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}<a href="/contact">Get a Quote</a></nav></details>
@@ -188,7 +195,7 @@ function footer() {
       <p style="margin:16px 0 0;max-width:24em;color:#555;font-size:15px">Website design and development from Chennai, for businesses and individuals across India.</p>
     </div>
     <div class="fcol"><div class="h mono">Services</div><div><a href="/industries#ecommerce">E-commerce</a><a href="/portfolio-websites">Portfolio Websites</a></div></div>
-    <div class="fcol"><div class="h mono">Locations</div><div><a href="/locations#chennai">Web Design Chennai</a><a href="/locations#india">Web Design India</a><a href="/web-development-agency-india">Web Development Agency India</a></div></div>
+    <div class="fcol"><div class="h mono">Locations</div><div><a href="/web-development-company-chennai">Web Development Company Chennai</a><a href="/locations#india">Web Design India</a><a href="/web-development-agency-india">Web Development Agency India</a></div></div>
     <div class="fcol"><div class="h mono">Studio</div><div><a href="/about">About</a><a href="/portfolio">Portfolio</a><a href="/process">Process</a><a href="/industries">Industries</a><a href="/blog">Blog</a><a href="/faq">FAQ</a></div></div>
     <div class="fcol"><div class="h mono">Contact</div><div><a href="mailto:thegraphikk@gmail.com" style="overflow-wrap:anywhere">thegraphikk@gmail.com</a></div></div>
   </div>
@@ -198,7 +205,7 @@ function footer() {
 <div class="sticky mono"><a href="mailto:thegraphikk@gmail.com">Email us</a><a class="q" href="/contact">Get a Quote ↗</a></div>`;
 }
 
-function page({ title, description, canonical, ogType = 'website', jsonld = [], body }) {
+function page({ title, description, canonical, ogType = 'website', jsonld = [], body, active }) {
   return `<!doctype html>
 <html lang="en-IN">
 <head>
@@ -220,7 +227,7 @@ ${FONTS}
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
 </head>
 <body><div class="wrap">
-${header()}
+${header(active)}
 ${body}
 ${footer()}
 </div></body>
@@ -298,6 +305,76 @@ ${related.length ? `<section class="section"><h2 style="margin:0 0 24px;font-wei
   return page({ title: `${p.title} — The Graphikk`, description: p.description, canonical: url, ogType: 'article', jsonld, body });
 }
 
+// The business itself, for landing-page schema. Keep in step with the
+// ProfessionalService block in index.html.
+const ORG = {
+  '@type': 'ProfessionalService', '@id': `${SITE}/#business`, name: 'The Graphikk', url: SITE + '/',
+  logo: `${SITE}/assets/img/logo.png`, image: `${SITE}/assets/img/og-blog.png`,
+  description: 'Web design and development company in Chennai building fast, SEO-ready websites and online stores for businesses across India.',
+  email: 'thegraphikk@gmail.com', telephone: '+91-70102-66975', priceRange: '₹20,000+',
+  address: { '@type': 'PostalAddress', addressLocality: 'Chennai', addressRegion: 'Tamil Nadu', addressCountry: 'IN' },
+  areaServed: [{ '@type': 'City', name: 'Chennai' }, { '@type': 'Country', name: 'India' }],
+  founder: { '@type': 'Person', name: AUTHOR },
+  knowsLanguage: ['en', 'ta'],
+};
+
+function readLandingPages() {
+  if (!fs.existsSync(PAGES_SRC)) return [];
+  return fs.readdirSync(PAGES_SRC).filter(f => f.endsWith('.html')).map(f => {
+    const raw = fs.readFileSync(path.join(PAGES_SRC, f), 'utf8');
+    const m = raw.match(/^\s*<!--([\s\S]*?)-->/);
+    if (!m) throw new Error(`${f}: missing front matter`);
+    const meta = JSON.parse(m[1]);
+    for (const k of ['slug', 'title', 'description', 'h1', 'lede']) {
+      if (!meta[k]) throw new Error(`${f}: front matter missing "${k}"`);
+    }
+    return { ...meta, body: raw.slice(m[0].length).trim() };
+  });
+}
+
+function landingPage(p, liveSlugs, allSlugs) {
+  const faq = p.faq || [];
+  const faqHtml = faq.length ? `\n<h2>Frequently asked questions</h2>\n${faq.map(f => `<h3>${esc(f.q)}</h3>\n<p>${esc(f.a)}</p>`).join('\n')}` : '';
+  const { html, toc } = withToc(linkLivePosts(p.body, liveSlugs, allSlugs) + faqHtml);
+  const url = `${SITE}/${p.slug}`;
+  const cta = p.cta || { text: 'Get a fixed written quote for your website in 24 hours.', href: '/contact', label: 'Get a Quote' };
+  const jsonld = [
+    { '@context': 'https://schema.org', ...ORG },
+    {
+      '@context': 'https://schema.org', '@type': 'WebPage', name: p.title, description: p.description, url,
+      inLanguage: 'en-IN', about: { '@id': ORG['@id'] }, isPartOf: { '@type': 'WebSite', name: 'The Graphikk', url: SITE + '/' },
+    },
+    {
+      '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+        { '@type': 'ListItem', position: 2, name: p.h1, item: url },
+      ],
+    },
+    ...(faq.length ? [{
+      '@context': 'https://schema.org', '@type': 'FAQPage',
+      mainEntity: faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    }] : []),
+  ];
+  const body = `<article>
+<header class="cover">${orbs(p.slug, false)}
+  <div class="post-head">
+    <a class="back mono" href="/">← Home${p.kicker ? ' / ' + esc(p.kicker) : ''}</a>
+    <h1>${esc(p.h1)}</h1>
+    <p class="lede">${esc(p.lede)}</p>
+    <div class="meta" style="margin-top:28px"><a class="btn" href="${cta.href}">${esc(cta.label)} <span>↗</span></a><a class="btn" href="/pricing" style="background:#fff">See pricing <span>↗</span></a></div>
+  </div>
+</header>
+<div class="body">
+  <nav class="toc" aria-label="Contents"><div class="mono" style="font-size:12px;color:#555">On this page</div><ol>${toc.map(t => `<li><a href="#${t.id}">${t.text}</a></li>`).join('')}</ol></nav>
+  <div class="prose">
+${html.replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/table>/g, '</table></div>')}
+    <aside class="cta"><div><div class="k mono">Work with The Graphikk</div><div class="t">${esc(cta.text)}</div></div><a class="btn" href="${cta.href}">${esc(cta.label)} <span>↗</span></a></aside>
+  </div>
+</div>
+</article>`;
+  return page({ title: p.title, description: p.description, canonical: url, jsonld, body, active: null });
+}
+
 function indexPage(list) {
   const [feat, ...rest] = list;
   const body = `<section class="cover" style="padding:clamp(40px,6vw,80px) clamp(16px,3vw,40px)">${orbs('blog-index', false)}
@@ -367,6 +444,7 @@ for (const p of posts) {
   fs.writeFileSync(file, postPage(p, related, liveSlugs, allSlugs));
 }
 fs.writeFileSync(path.join(OUT, 'index.html'), indexPage(listed));
+for (const p of readLandingPages()) fs.writeFileSync(path.join(ROOT, p.slug + '.html'), landingPage(p, liveSlugs, allSlugs));
 
 const urls = [
   ...STATIC_PAGES.map(([u, pr]) => `  <url><loc>${SITE}${u}</loc><priority>${pr}</priority></url>`),

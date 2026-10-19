@@ -97,6 +97,11 @@
       "permanent": true
     },
     {
+      "source": "/web-development-company-chennai.html",
+      "destination": "/web-development-company-chennai",
+      "permanent": true
+    },
+    {
       "source": "/Blog.html",
       "destination": "/blog",
       "permanent": true
@@ -184,6 +189,10 @@
     {
       "source": "/web-development-agency-india",
       "destination": "/web-development-agency-india.html"
+    },
+    {
+      "source": "/web-development-company-chennai",
+      "destination": "/web-development-company-chennai.html"
     },
     {
       "source": "/blog",
