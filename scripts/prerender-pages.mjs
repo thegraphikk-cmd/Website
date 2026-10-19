@@ -22,7 +22,7 @@ const IMG_DIR = 'assets/prerender';
 const PAGES = [
   'index.html', 'about.html', 'contact.html', 'faq.html', 'industries.html', 'legal.html',
   'locations.html', 'portfolio.html', 'portfolio-websites.html', 'pricing.html', 'process.html',
-  'web-development-agency-india.html',
+  'web-development-agency-india.html', 'blog/website-cost-in-india.html',
 ];
 
 // Tabbed sections whose non-default tabs should also be in the snapshot.
