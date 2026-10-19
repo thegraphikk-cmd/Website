@@ -30,6 +30,7 @@ const PAGES = [
 // `hidden` copy, so crawlers read every tab without changing the layout.
 const TAB_PANELS = {
   'pricing.html': { tabs: 'button[role="tab"]', panel: 'section[data-screen-label="Pricing / Tiers"]' },
+  'legal.html': { tabs: 'button[role="tab"]', panel: 'div[data-screen-label="Legal / Policy"]' },
 };
 
 const FONT_LINK = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">';
