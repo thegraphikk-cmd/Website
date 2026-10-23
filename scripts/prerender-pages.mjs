@@ -185,6 +185,13 @@ async function capture(chrome, name) {
           b.click();
           await wait(300);
           const p = document.querySelector(cfg.panel).cloneNode(true);
+          // Keep one H1 per page: hidden tab copies get theirs as an H2.
+          p.querySelectorAll('h1').forEach((h) => {
+            const h2 = document.createElement('h2');
+            for (const a of h.attributes) h2.setAttribute(a.name, a.value);
+            h2.innerHTML = h.innerHTML;
+            h.replaceWith(h2);
+          });
           p.setAttribute('hidden', '');
           p.setAttribute('data-prerender-tab', label(b));
           anchor.after(p);

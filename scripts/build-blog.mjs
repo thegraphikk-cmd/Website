@@ -18,6 +18,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -316,6 +317,22 @@ const ORG = {
   areaServed: [{ '@type': 'City', name: 'Chennai' }, { '@type': 'Country', name: 'India' }],
   founder: { '@type': 'Person', name: AUTHOR },
   knowsLanguage: ['en', 'ta'],
+  currenciesAccepted: 'INR',
+  contactPoint: {
+    '@type': 'ContactPoint', contactType: 'sales', telephone: '+91-70102-66975', email: 'thegraphikk@gmail.com',
+    areaServed: 'IN', availableLanguage: ['English', 'Tamil'],
+  },
+  knowsAbout: ['Web design', 'Web development', 'E-commerce websites', 'Shopify', 'WooCommerce', 'Search engine optimisation', 'Local SEO', 'Google Business Profile', 'Core Web Vitals'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog', name: 'Website design and development packages',
+    itemListElement: [
+      ['Business website', 40000], ['E-commerce website', 50000], ['Landing page', 20000],
+      ['Portfolio website', 20000], ['SEO and ads management', 30000, 'per month'],
+    ].map(([name, minPrice, unitText]) => ({
+      '@type': 'Offer', itemOffered: { '@type': 'Service', name },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice, priceCurrency: 'INR', ...(unitText ? { unitText } : {}) },
+    })),
+  },
 };
 
 function readLandingPages() {
@@ -446,8 +463,21 @@ for (const p of posts) {
 fs.writeFileSync(path.join(OUT, 'index.html'), indexPage(listed));
 for (const p of readLandingPages()) fs.writeFileSync(path.join(ROOT, p.slug + '.html'), landingPage(p, liveSlugs, allSlugs));
 
+// lastmod for the static pages is the date of the last commit that touched the
+// page's file (CI checks out full history for this). Left out if git can't say.
+function lastCommitDate(u) {
+  const file = u === '/' ? 'index.html' : u === '/blog' ? 'blog/index.html' : u.slice(1) + '.html';
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { cwd: ROOT, encoding: 'utf8' }).trim();
+  } catch {
+    return '';
+  }
+}
 const urls = [
-  ...STATIC_PAGES.map(([u, pr]) => `  <url><loc>${SITE}${u}</loc><priority>${pr}</priority></url>`),
+  ...STATIC_PAGES.map(([u, pr]) => {
+    const d = lastCommitDate(u);
+    return `  <url><loc>${SITE}${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ''}<priority>${pr}</priority></url>`;
+  }),
   ...listed.map(p => `  <url><loc>${SITE}/blog/${p.slug}</loc><lastmod>${p.updated || p.date}</lastmod><priority>0.6</priority></url>`),
 ];
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
