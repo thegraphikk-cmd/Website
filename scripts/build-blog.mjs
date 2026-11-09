@@ -79,6 +79,9 @@ function withToc(body) {
   return { html, toc };
 }
 
+// Vercel Web Analytics + Speed Insights (enable both in the Vercel project dashboard).
+// Keep in sync with scripts/add-tracking.mjs, which patches the bundled pages and 404.html.
+const TRACKING = '<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>';
 const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">';
 
 const CSS = `
@@ -155,6 +158,7 @@ a:hover{color:var(--blue)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 18px}
 .card{display:flex;flex-direction:column;gap:12px}
 .card .cover{aspect-ratio:16/9;border-radius:16px;padding:18px;display:flex;align-items:flex-end}
+.cover.thumb{padding:0;aspect-ratio:16/9;background:#1A8BDD}.cover.thumb:before,.cover.thumb:after{display:none}.cover.thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.card:hover .cover.thumb img{transform:scale(1.03)}
 .card .cover b{position:relative;z-index:1;font-weight:500;font-size:20px;line-height:1.15;letter-spacing:-.04em;text-shadow:0 1px 12px rgba(0,40,90,.25)}
 .card .k{font-size:11px;color:#666}
 .card h3{margin:0;font-weight:500;font-size:21px;line-height:1.25;letter-spacing:-.03em}
@@ -206,7 +210,7 @@ function footer() {
 <div class="sticky mono"><a href="mailto:thegraphikk@gmail.com">Email us</a><a class="q" href="/contact">Get a Quote ↗</a></div>`;
 }
 
-function page({ title, description, canonical, ogType = 'website', jsonld = [], body, active }) {
+function page({ title, description, canonical, ogType = 'website', jsonld = [], body, active, image = `${SITE}/assets/img/og-blog.png` }) {
   return `<!doctype html>
 <html lang="en-IN">
 <head>
@@ -220,12 +224,13 @@ function page({ title, description, canonical, ogType = 'website', jsonld = [], 
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:site_name" content="The Graphikk">
-<meta property="og:image" content="${SITE}/assets/img/og-blog.png">
+<meta property="og:image" content="${image}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/logo.png">
 ${FONTS}
 <style>${CSS}</style>
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
+${TRACKING}
 </head>
 <body><div class="wrap">
 ${header(active)}
@@ -247,9 +252,20 @@ function orbs(seed, small = true) {
   return small ? big + `<span class="orb ${b}" style="width:${9 + (h >>> 18) % 6}%;aspect-ratio:1;left:${48 + (h >>> 21) % 14}%;top:${10 + (h >>> 25) % 22}%"></span>` : big;
 }
 
+// Photo thumbnails from scripts/build-thumbs.mjs; posts without one keep the orb cover.
+function thumbUrl(slug, abs) {
+  if (!fs.existsSync(path.join(ROOT, 'assets/img/blog', slug + '.webp'))) return null;
+  return abs ? `${SITE}/assets/img/blog/${slug}.jpg` : `/assets/img/blog/${slug}`;
+}
+function thumb(p, sizes, eager = false) {
+  const u = thumbUrl(p.slug);
+  if (!u) return `<div class="cover ${p.category}" style="aspect-ratio:16/9" aria-hidden="true">${orbs(p.slug)}</div>`;
+  return `<div class="cover thumb"><img src="${u}-800.webp" srcset="${u}-800.webp 800w, ${u}.webp 1600w" sizes="${sizes}" width="1600" height="900" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}></div>`;
+}
+
 function card(p) {
   return `<a class="card" href="/blog/${p.slug}" data-cat="${p.category}">
-  <div class="cover ${p.category}" aria-hidden="true">${orbs(p.slug)}</div>
+  ${thumb(p, '(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px')}
   <div class="k mono">${CATS[p.category]} · ${p.mins} min</div>
   <h3>${esc(p.title)}</h3>
 </a>`;
@@ -273,7 +289,7 @@ function postPage(p, related, liveSlugs, allSlugs) {
     {
       '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.title, description: p.description,
       datePublished: p.date, dateModified: p.updated || p.date, mainEntityOfPage: url, url,
-      image: `${SITE}/assets/img/og-blog.png`, inLanguage: 'en-IN',
+      image: thumbUrl(p.slug, true) || `${SITE}/assets/img/og-blog.png`, inLanguage: 'en-IN',
       author: { '@type': 'Person', name: AUTHOR, url: `${SITE}/about` },
       publisher: { '@type': 'Organization', name: 'The Graphikk', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo.png` } },
     },
@@ -303,7 +319,7 @@ ${html.replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/tabl
 </div>
 </article>
 ${related.length ? `<section class="section"><h2 style="margin:0 0 24px;font-weight:500;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.045em">Keep reading</h2><div class="grid">${related.map(card).join('')}</div></section>` : ''}`;
-  return page({ title: `${p.title} — The Graphikk`, description: p.description, canonical: url, ogType: 'article', jsonld, body });
+  return page({ title: `${p.title} — The Graphikk`, description: p.description, canonical: url, ogType: 'article', jsonld, body, image: thumbUrl(p.slug, true) || undefined });
 }
 
 // The business itself, for landing-page schema. Keep in step with the
@@ -403,7 +419,7 @@ function indexPage(list) {
 </section>
 <section class="section" style="padding-top:clamp(40px,5vw,64px)">
   <a class="card" href="/blog/${feat.slug}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:center;margin-bottom:clamp(40px,5vw,64px)">
-    <div class="cover ${feat.category}" style="aspect-ratio:16/9;border-radius:18px" aria-hidden="true">${orbs(feat.slug)}</div>
+    ${thumb(feat, '(max-width:800px) 100vw, 620px', true)}
     <div style="display:flex;flex-direction:column;gap:14px">
       <span class="mono" style="align-self:flex-start;font-size:11px;padding:6px 12px;border-radius:999px;background:var(--yellow)">Latest</span>
       <div class="k mono">${CATS[feat.category]} · ${feat.mins} min</div>

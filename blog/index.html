@@ -89,6 +89,7 @@ a:hover{color:var(--blue)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 18px}
 .card{display:flex;flex-direction:column;gap:12px}
 .card .cover{aspect-ratio:16/9;border-radius:16px;padding:18px;display:flex;align-items:flex-end}
+.cover.thumb{padding:0;aspect-ratio:16/9;background:#1A8BDD}.cover.thumb:before,.cover.thumb:after{display:none}.cover.thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.card:hover .cover.thumb img{transform:scale(1.03)}
 .card .cover b{position:relative;z-index:1;font-weight:500;font-size:20px;line-height:1.15;letter-spacing:-.04em;text-shadow:0 1px 12px rgba(0,40,90,.25)}
 .card .k{font-size:11px;color:#666}
 .card h3{margin:0;font-weight:500;font-size:21px;line-height:1.25;letter-spacing:-.03em}
@@ -110,6 +111,7 @@ a:hover{color:var(--blue)}
 @media (max-width:899px){.sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:8px;padding:6px;border-radius:999px;background:rgba(17,17,17,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.sticky a{flex:1;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}.sticky a.q{flex:1.2;background:var(--yellow);color:var(--ink)}.ftr{padding-bottom:96px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"The Graphikk blog","url":"https://thegraphikk.com/blog","blogPost":[{"@type":"BlogPosting","headline":"Redesigning a website without losing your Google rankings","url":"https://thegraphikk.com/blog/redesign-website-without-losing-seo","datePublished":"2026-11-09"},{"@type":"BlogPosting","headline":"How to choose a web design company in Chennai: 12 questions to ask","url":"https://thegraphikk.com/blog/how-to-choose-web-design-company-chennai","datePublished":"2026-11-08"},{"@type":"BlogPosting","headline":"Domain and hosting cost in India: what you actually pay each year","url":"https://thegraphikk.com/blog/domain-and-hosting-cost-india","datePublished":"2026-11-07"},{"@type":"BlogPosting","headline":"Shopify vs WooCommerce for Indian brands: which should you choose?","url":"https://thegraphikk.com/blog/shopify-vs-woocommerce-india","datePublished":"2026-11-06"},{"@type":"BlogPosting","headline":"How to add a WhatsApp chat button to your website","url":"https://thegraphikk.com/blog/whatsapp-button-on-website","datePublished":"2026-11-05"},{"@type":"BlogPosting","headline":"Portfolio website for freelancers in India: what to include to win clients","url":"https://thegraphikk.com/blog/portfolio-website-for-freelancers","datePublished":"2026-11-04"},{"@type":"BlogPosting","headline":"Does your restaurant need a website if you're on Swiggy and Zomato?","url":"https://thegraphikk.com/blog/restaurant-website-india","datePublished":"2026-11-03"},{"@type":"BlogPosting","headline":"Google Business Profile video verification: what to record","url":"https://thegraphikk.com/blog/google-business-profile-video-verification","datePublished":"2026-11-02"},{"@type":"BlogPosting","headline":"UPI, cards or COD: setting up payments for an Indian website","url":"https://thegraphikk.com/blog/payment-gateway-for-website-india","datePublished":"2026-11-01"},{"@type":"BlogPosting","headline":"Landing page vs website: where should your Google and Meta ads go?","url":"https://thegraphikk.com/blog/landing-page-vs-website-for-ads","datePublished":"2026-10-31"},{"@type":"BlogPosting","headline":"Wix vs WordPress vs custom website: which is right for your business?","url":"https://thegraphikk.com/blog/wix-vs-wordpress-vs-custom","datePublished":"2026-10-30"},{"@type":"BlogPosting","headline":"Do I need a website if I already have Instagram?","url":"https://thegraphikk.com/blog/do-i-need-a-website-if-i-have-instagram","datePublished":"2026-10-29"},{"@type":"BlogPosting","headline":"Cash on delivery on Shopify in India: charges, limits and reducing RTO","url":"https://thegraphikk.com/blog/cod-on-shopify-india","datePublished":"2026-10-28"},{"@type":"BlogPosting","headline":"Clinic and doctor websites in India: what to include (and avoid)","url":"https://thegraphikk.com/blog/clinic-website-india","datePublished":"2026-10-27"},{"@type":"BlogPosting","headline":"Website maintenance cost in India: what you pay for and why","url":"https://thegraphikk.com/blog/website-maintenance-cost-india","datePublished":"2026-10-26"},{"@type":"BlogPosting","headline":".in or .com: which domain is better for an Indian business?","url":"https://thegraphikk.com/blog/in-vs-com-domain-india","datePublished":"2026-10-25"},{"@type":"BlogPosting","headline":"How to set up GST on Shopify in India (CGST, SGST and IGST)","url":"https://thegraphikk.com/blog/shopify-gst-setup-india","datePublished":"2026-10-24"},{"@type":"BlogPosting","headline":"How long does it take to build a website?","url":"https://thegraphikk.com/blog/how-long-to-build-a-website","datePublished":"2026-10-23"},{"@type":"BlogPosting","headline":"Freelancer vs agency: who should build your business website?","url":"https://thegraphikk.com/blog/freelancer-vs-agency-website","datePublished":"2026-10-22"},{"@type":"BlogPosting","headline":"Why is my business not showing on Google Maps? 9 fixes","url":"https://thegraphikk.com/blog/business-not-showing-on-google-maps","datePublished":"2026-10-21"}]}</script>
+<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body><div class="wrap">
 <header class="hdr"><div class="bar">
@@ -129,7 +131,7 @@ a:hover{color:var(--blue)}
 </section>
 <section class="section" style="padding-top:clamp(40px,5vw,64px)">
   <a class="card" href="/blog/redesign-website-without-losing-seo" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px;align-items:center;margin-bottom:clamp(40px,5vw,64px)">
-    <div class="cover seo" style="aspect-ratio:16/9;border-radius:18px" aria-hidden="true"><span class="orb c" style="width:31%;aspect-ratio:1;right:-6%;top:10%"></span><span class="orb y" style="width:9%;aspect-ratio:1;left:52%;top:10%"></span></div>
+    <div class="cover thumb"><img src="/assets/img/blog/redesign-website-without-losing-seo-800.webp" srcset="/assets/img/blog/redesign-website-without-losing-seo-800.webp 800w, /assets/img/blog/redesign-website-without-losing-seo.webp 1600w" sizes="(max-width:800px) 100vw, 620px" width="1600" height="900" alt="" fetchpriority="high"></div>
     <div style="display:flex;flex-direction:column;gap:14px">
       <span class="mono" style="align-self:flex-start;font-size:11px;padding:6px 12px;border-radius:999px;background:var(--yellow)">Latest</span>
       <div class="k mono">SEO & performance · 8 min</div>
@@ -142,111 +144,111 @@ a:hover{color:var(--blue)}
     <button role="tab" aria-selected="true" data-f="all">All</button><button role="tab" aria-selected="false" data-f="guides">Web design guides</button><button role="tab" aria-selected="false" data-f="seo">SEO & performance</button><button role="tab" aria-selected="false" data-f="ecom">E-commerce</button>
   </div>
   <div class="grid" id="posts"><a class="card" href="/blog/how-to-choose-web-design-company-chennai" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:28%;aspect-ratio:1;right:-7%;top:13%"></span><span class="orb m" style="width:14%;aspect-ratio:1;left:56%;top:26%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/how-to-choose-web-design-company-chennai-800.webp" srcset="/assets/img/blog/how-to-choose-web-design-company-chennai-800.webp 800w, /assets/img/blog/how-to-choose-web-design-company-chennai.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>How to choose a web design company in Chennai: 12 questions to ask</h3>
 </a><a class="card" href="/blog/domain-and-hosting-cost-india" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:32%;aspect-ratio:1;right:-7%;top:16%"></span><span class="orb m" style="width:10%;aspect-ratio:1;left:55%;top:26%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/domain-and-hosting-cost-india-800.webp" srcset="/assets/img/blog/domain-and-hosting-cost-india-800.webp 800w, /assets/img/blog/domain-and-hosting-cost-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Domain and hosting cost in India: what you actually pay each year</h3>
 </a><a class="card" href="/blog/shopify-vs-woocommerce-india" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb y" style="width:28%;aspect-ratio:1;right:-10%;top:13%"></span><span class="orb m" style="width:11%;aspect-ratio:1;left:61%;top:17%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/shopify-vs-woocommerce-india-800.webp" srcset="/assets/img/blog/shopify-vs-woocommerce-india-800.webp 800w, /assets/img/blog/shopify-vs-woocommerce-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 9 min</div>
   <h3>Shopify vs WooCommerce for Indian brands: which should you choose?</h3>
 </a><a class="card" href="/blog/whatsapp-button-on-website" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:34%;aspect-ratio:1;right:-6%;top:10%"></span><span class="orb y" style="width:12%;aspect-ratio:1;left:57%;top:10%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/whatsapp-button-on-website-800.webp" srcset="/assets/img/blog/whatsapp-button-on-website-800.webp 800w, /assets/img/blog/whatsapp-button-on-website.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 6 min</div>
   <h3>How to add a WhatsApp chat button to your website</h3>
 </a><a class="card" href="/blog/portfolio-website-for-freelancers" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:30%;aspect-ratio:1;right:-13%;top:18%"></span><span class="orb m" style="width:13%;aspect-ratio:1;left:49%;top:22%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/portfolio-website-for-freelancers-800.webp" srcset="/assets/img/blog/portfolio-website-for-freelancers-800.webp 800w, /assets/img/blog/portfolio-website-for-freelancers.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 8 min</div>
   <h3>Portfolio website for freelancers in India: what to include to win clients</h3>
 </a><a class="card" href="/blog/restaurant-website-india" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:33%;aspect-ratio:1;right:-8%;top:8%"></span><span class="orb y" style="width:13%;aspect-ratio:1;left:60%;top:23%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/restaurant-website-india-800.webp" srcset="/assets/img/blog/restaurant-website-india-800.webp 800w, /assets/img/blog/restaurant-website-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Does your restaurant need a website if you're on Swiggy and Zomato?</h3>
 </a><a class="card" href="/blog/google-business-profile-video-verification" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb m" style="width:31%;aspect-ratio:1;right:-13%;top:25%"></span><span class="orb c" style="width:10%;aspect-ratio:1;left:49%;top:14%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/google-business-profile-video-verification-800.webp" srcset="/assets/img/blog/google-business-profile-video-verification-800.webp 800w, /assets/img/blog/google-business-profile-video-verification.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 6 min</div>
   <h3>Google Business Profile video verification: what to record</h3>
 </a><a class="card" href="/blog/payment-gateway-for-website-india" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb y" style="width:32%;aspect-ratio:1;right:-7%;top:14%"></span><span class="orb m" style="width:11%;aspect-ratio:1;left:57%;top:29%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/payment-gateway-for-website-india-800.webp" srcset="/assets/img/blog/payment-gateway-for-website-india-800.webp 800w, /assets/img/blog/payment-gateway-for-website-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 8 min</div>
   <h3>UPI, cards or COD: setting up payments for an Indian website</h3>
 </a><a class="card" href="/blog/landing-page-vs-website-for-ads" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:34%;aspect-ratio:1;right:-11%;top:27%"></span><span class="orb y" style="width:14%;aspect-ratio:1;left:61%;top:20%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/landing-page-vs-website-for-ads-800.webp" srcset="/assets/img/blog/landing-page-vs-website-for-ads-800.webp 800w, /assets/img/blog/landing-page-vs-website-for-ads.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Landing page vs website: where should your Google and Meta ads go?</h3>
 </a><a class="card" href="/blog/wix-vs-wordpress-vs-custom" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb y" style="width:29%;aspect-ratio:1;right:-11%;top:18%"></span><span class="orb c" style="width:12%;aspect-ratio:1;left:54%;top:23%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/wix-vs-wordpress-vs-custom-800.webp" srcset="/assets/img/blog/wix-vs-wordpress-vs-custom-800.webp 800w, /assets/img/blog/wix-vs-wordpress-vs-custom.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 8 min</div>
   <h3>Wix vs WordPress vs custom website: which is right for your business?</h3>
 </a><a class="card" href="/blog/do-i-need-a-website-if-i-have-instagram" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:31%;aspect-ratio:1;right:-8%;top:25%"></span><span class="orb c" style="width:14%;aspect-ratio:1;left:48%;top:14%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/do-i-need-a-website-if-i-have-instagram-800.webp" srcset="/assets/img/blog/do-i-need-a-website-if-i-have-instagram-800.webp 800w, /assets/img/blog/do-i-need-a-website-if-i-have-instagram.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Do I need a website if I already have Instagram?</h3>
 </a><a class="card" href="/blog/cod-on-shopify-india" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb y" style="width:36%;aspect-ratio:1;right:-10%;top:17%"></span><span class="orb c" style="width:10%;aspect-ratio:1;left:56%;top:29%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/cod-on-shopify-india-800.webp" srcset="/assets/img/blog/cod-on-shopify-india-800.webp 800w, /assets/img/blog/cod-on-shopify-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 8 min</div>
   <h3>Cash on delivery on Shopify in India: charges, limits and reducing RTO</h3>
 </a><a class="card" href="/blog/clinic-website-india" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb y" style="width:31%;aspect-ratio:1;right:-12%;top:9%"></span><span class="orb m" style="width:14%;aspect-ratio:1;left:56%;top:23%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/clinic-website-india-800.webp" srcset="/assets/img/blog/clinic-website-india-800.webp 800w, /assets/img/blog/clinic-website-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 8 min</div>
   <h3>Clinic and doctor websites in India: what to include (and avoid)</h3>
 </a><a class="card" href="/blog/website-maintenance-cost-india" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:36%;aspect-ratio:1;right:-12%;top:26%"></span><span class="orb y" style="width:12%;aspect-ratio:1;left:59%;top:21%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/website-maintenance-cost-india-800.webp" srcset="/assets/img/blog/website-maintenance-cost-india-800.webp 800w, /assets/img/blog/website-maintenance-cost-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Website maintenance cost in India: what you pay for and why</h3>
 </a><a class="card" href="/blog/in-vs-com-domain-india" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb c" style="width:32%;aspect-ratio:1;right:-11%;top:25%"></span><span class="orb y" style="width:14%;aspect-ratio:1;left:50%;top:24%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/in-vs-com-domain-india-800.webp" srcset="/assets/img/blog/in-vs-com-domain-india-800.webp 800w, /assets/img/blog/in-vs-com-domain-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 6 min</div>
   <h3>.in or .com: which domain is better for an Indian business?</h3>
 </a><a class="card" href="/blog/shopify-gst-setup-india" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb c" style="width:37%;aspect-ratio:1;right:-6%;top:27%"></span><span class="orb m" style="width:14%;aspect-ratio:1;left:57%;top:25%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/shopify-gst-setup-india-800.webp" srcset="/assets/img/blog/shopify-gst-setup-india-800.webp 800w, /assets/img/blog/shopify-gst-setup-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 8 min</div>
   <h3>How to set up GST on Shopify in India (CGST, SGST and IGST)</h3>
 </a><a class="card" href="/blog/how-long-to-build-a-website" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:32%;aspect-ratio:1;right:-6%;top:15%"></span><span class="orb c" style="width:11%;aspect-ratio:1;left:48%;top:12%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/how-long-to-build-a-website-800.webp" srcset="/assets/img/blog/how-long-to-build-a-website-800.webp 800w, /assets/img/blog/how-long-to-build-a-website.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 6 min</div>
   <h3>How long does it take to build a website?</h3>
 </a><a class="card" href="/blog/freelancer-vs-agency-website" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb y" style="width:35%;aspect-ratio:1;right:-10%;top:23%"></span><span class="orb m" style="width:13%;aspect-ratio:1;left:53%;top:18%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/freelancer-vs-agency-website-800.webp" srcset="/assets/img/blog/freelancer-vs-agency-website-800.webp 800w, /assets/img/blog/freelancer-vs-agency-website.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 7 min</div>
   <h3>Freelancer vs agency: who should build your business website?</h3>
 </a><a class="card" href="/blog/business-not-showing-on-google-maps" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb c" style="width:37%;aspect-ratio:1;right:-9%;top:25%"></span><span class="orb y" style="width:14%;aspect-ratio:1;left:57%;top:16%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/business-not-showing-on-google-maps-800.webp" srcset="/assets/img/blog/business-not-showing-on-google-maps-800.webp 800w, /assets/img/blog/business-not-showing-on-google-maps.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 7 min</div>
   <h3>Why is my business not showing on Google Maps? 9 fixes</h3>
 </a><a class="card" href="/blog/ecommerce-website-cost-india" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb c" style="width:28%;aspect-ratio:1;right:-11%;top:16%"></span><span class="orb m" style="width:12%;aspect-ratio:1;left:53%;top:27%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/ecommerce-website-cost-india-800.webp" srcset="/assets/img/blog/ecommerce-website-cost-india-800.webp 800w, /assets/img/blog/ecommerce-website-cost-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 8 min</div>
   <h3>How much does an e-commerce website cost in India?</h3>
 </a><a class="card" href="/blog/local-seo-chennai-checklist" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb c" style="width:34%;aspect-ratio:1;right:-8%;top:25%"></span><span class="orb y" style="width:10%;aspect-ratio:1;left:51%;top:22%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/local-seo-chennai-checklist-800.webp" srcset="/assets/img/blog/local-seo-chennai-checklist-800.webp 800w, /assets/img/blog/local-seo-chennai-checklist.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 9 min</div>
   <h3>Local SEO for Chennai businesses: a practical checklist</h3>
 </a><a class="card" href="/blog/what-to-prepare-before-hiring-a-web-designer" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:35%;aspect-ratio:1;right:-6%;top:18%"></span><span class="orb y" style="width:13%;aspect-ratio:1;left:55%;top:28%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/what-to-prepare-before-hiring-a-web-designer-800.webp" srcset="/assets/img/blog/what-to-prepare-before-hiring-a-web-designer-800.webp 800w, /assets/img/blog/what-to-prepare-before-hiring-a-web-designer.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 6 min</div>
   <h3>What to prepare before hiring a web designer: a checklist</h3>
 </a><a class="card" href="/blog/website-design-cost-chennai" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb c" style="width:28%;aspect-ratio:1;right:-6%;top:24%"></span><span class="orb y" style="width:12%;aspect-ratio:1;left:48%;top:30%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/website-design-cost-chennai-800.webp" srcset="/assets/img/blog/website-design-cost-chennai-800.webp 800w, /assets/img/blog/website-design-cost-chennai.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 8 min</div>
   <h3>Website design cost in Chennai: 2026 price guide</h3>
 </a><a class="card" href="/blog/add-business-to-google-maps" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb m" style="width:28%;aspect-ratio:1;right:-6%;top:18%"></span><span class="orb c" style="width:12%;aspect-ratio:1;left:57%;top:21%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/add-business-to-google-maps-800.webp" srcset="/assets/img/blog/add-business-to-google-maps-800.webp 800w, /assets/img/blog/add-business-to-google-maps.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 8 min</div>
   <h3>How to add your business to Google Maps in India (step by step)</h3>
 </a><a class="card" href="/blog/speed-up-shopify-store-mobile" data-cat="ecom">
-  <div class="cover ecom" aria-hidden="true"><span class="orb m" style="width:34%;aspect-ratio:1;right:-9%;top:27%"></span><span class="orb y" style="width:12%;aspect-ratio:1;left:53%;top:12%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/speed-up-shopify-store-mobile-800.webp" srcset="/assets/img/blog/speed-up-shopify-store-mobile-800.webp 800w, /assets/img/blog/speed-up-shopify-store-mobile.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">E-commerce · 8 min</div>
   <h3>How to speed up a Shopify store on mobile</h3>
 </a><a class="card" href="/blog/core-web-vitals-fast-website" data-cat="seo">
-  <div class="cover seo" aria-hidden="true"><span class="orb m" style="width:36%;aspect-ratio:1;right:-11%;top:11%"></span><span class="orb c" style="width:13%;aspect-ratio:1;left:56%;top:15%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/core-web-vitals-fast-website-800.webp" srcset="/assets/img/blog/core-web-vitals-fast-website-800.webp 800w, /assets/img/blog/core-web-vitals-fast-website.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">SEO & performance · 8 min</div>
   <h3>Core Web Vitals: what a fast site actually needs</h3>
 </a><a class="card" href="/blog/website-cost-in-india" data-cat="guides">
-  <div class="cover guides" aria-hidden="true"><span class="orb m" style="width:36%;aspect-ratio:1;right:-7%;top:18%"></span><span class="orb c" style="width:12%;aspect-ratio:1;left:54%;top:18%"></span></div>
+  <div class="cover thumb"><img src="/assets/img/blog/website-cost-in-india-800.webp" srcset="/assets/img/blog/website-cost-in-india-800.webp 800w, /assets/img/blog/website-cost-in-india.webp 1600w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 400px" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
   <div class="k mono">Web design guides · 8 min</div>
   <h3>How much does a website cost in India in 2026?</h3>
 </a></div>
