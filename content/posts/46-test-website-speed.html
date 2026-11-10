@@ -1,0 +1,59 @@
+<!--
+{
+  "title": "How to test your website speed (and what the scores actually mean)",
+  "slug": "test-website-speed",
+  "date": "2026-11-28",
+  "category": "seo",
+  "mins": 6,
+  "keyword": "how to test website speed",
+  "description": "How to test your website's speed with PageSpeed Insights and Search Console, what LCP, INP and CLS mean in plain English, lab vs real-user data, and which fixes make the biggest difference.",
+  "cta": { "text": "We build sites that pass Core Web Vitals on mobile, and we test every page before launch.", "href": "/pricing", "label": "See website packages" }
+}
+-->
+<p>A slow website loses visitors before they see what you offer, especially on mobile data. Testing your speed takes two minutes and is free. Understanding the results takes a little longer, so here's a plain-English guide.</p>
+
+<h2>The free tools</h2>
+<ul>
+  <li><strong><a href="https://pagespeed.web.dev" target="_blank" rel="noopener">PageSpeed Insights</a></strong>: enter any page address and get a mobile and desktop report from Google.</li>
+  <li><strong>Google Search Console</strong>: the Core Web Vitals report shows how real visitors experience your whole site; see <a href="/blog/google-search-console-beginners">Search Console for beginners</a>.</li>
+  <li><strong>Chrome DevTools (Lighthouse)</strong>: the same lab test, built into Chrome, for developers.</li>
+</ul>
+
+<h2>Two kinds of data: lab and field</h2>
+<p>PageSpeed Insights shows two sections, and they often disagree:</p>
+<ul>
+  <li><strong>Field data</strong> ("Discover what your real users are experiencing") comes from real Chrome users over the last 28 days. This is what Google uses for rankings. Small or new sites often don't have enough visitors to show it.</li>
+  <li><strong>Lab data</strong> (the score out of 100) is a simulated test on a mid-range phone with a slow connection. It's useful for finding problems, but it's one test, not your visitors' real experience.</li>
+</ul>
+<p>Don't panic over a lab score of 60 if your field data is green, and don't celebrate a lab 95 if real users are struggling.</p>
+
+<h2>The three numbers that matter</h2>
+<h3>LCP: Largest Contentful Paint</h3>
+<p>How long it takes for the main content, usually the biggest image or heading, to appear. <strong>Good: under 2.5 seconds.</strong> Slow LCP is usually caused by large images, slow hosting or too much code loading first.</p>
+<h3>INP: Interaction to Next Paint</h3>
+<p>How quickly the page responds when someone taps a button or opens a menu. <strong>Good: under 200 milliseconds.</strong> Poor INP usually means heavy JavaScript: too many plugins, chat widgets or tracking scripts.</p>
+<h3>CLS: Cumulative Layout Shift</h3>
+<p>How much the page jumps around while loading, like when a banner loads and pushes the button you were about to tap. <strong>Good: under 0.1.</strong> Usually caused by images without set sizes, late-loading ads or fonts.</p>
+<p>We go deeper in <a href="/blog/core-web-vitals-fast-website">Core Web Vitals: what a fast site actually needs</a>.</p>
+
+<h2>How to test properly</h2>
+<ul>
+  <li><strong>Test the mobile result first</strong>; that's what most of your customers see and what Google prioritises.</li>
+  <li><strong>Test several pages</strong>: home, a service or product page and a blog post. They often differ a lot.</li>
+  <li><strong>Run each test two or three times</strong>; lab results vary from run to run.</li>
+  <li><strong>Test on your own phone</strong> on mobile data, not office Wi-Fi.</li>
+</ul>
+
+<h2>The fixes that make the biggest difference</h2>
+<ol>
+  <li><strong>Compress and resize images.</strong> A 4 MB photo from a phone should be around 100 to 200 KB on the web, in WebP format. This alone fixes many slow sites.</li>
+  <li><strong>Remove what you don't use</strong>: unused plugins, apps, sliders, popups and tracking scripts.</li>
+  <li><strong>Use decent hosting</strong> with servers or a CDN close to India.</li>
+  <li><strong>Lazy-load images below the fold</strong>, but load the main image straight away.</li>
+  <li><strong>Avoid auto-playing videos</strong> in the first screen; embed YouTube with a click-to-play preview.</li>
+  <li><strong>Set width and height on images</strong> to stop layout shifts.</li>
+</ol>
+<p>Running a Shopify store? See <a href="/blog/speed-up-shopify-store-mobile">how to speed up a Shopify store on mobile</a>.</p>
+
+<h2>What score should you aim for?</h2>
+<p>Aim for green field data (all three Core Web Vitals "Good") and a mobile lab score in the 80s or 90s for your key pages. Chasing 100 rarely pays off. Once the basics are fixed, your content and reviews matter more for rankings than a few extra points.</p>

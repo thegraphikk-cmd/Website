@@ -1,0 +1,59 @@
+<!--
+{
+  "title": "Why your website says \"Not secure\" (and how to fix it)",
+  "slug": "website-not-secure-ssl",
+  "date": "2026-11-20",
+  "category": "seo",
+  "mins": 5,
+  "keyword": "website showing not secure",
+  "description": "What the \"Not secure\" warning in Chrome means, why it costs you enquiries and rankings, and how to fix it with a free SSL certificate, HTTPS redirects and mixed-content checks.",
+  "cta": { "text": "Every site we build runs on HTTPS with a free, auto-renewing SSL certificate.", "href": "/pricing", "label": "See website packages" }
+}
+-->
+<p>If Chrome shows <strong>"Not secure"</strong> next to your website's address, visitors notice. Many will leave before reading anything, and those who stay are less likely to fill in a form or pay. The fix is usually simple and often free.</p>
+
+<h2>What "Not secure" means</h2>
+<p>It means your page is loading over <strong>HTTP</strong> instead of <strong>HTTPS</strong>. With HTTP, anything a visitor types, such as their name, phone number or card details, travels unencrypted. Browsers warn about this to protect users.</p>
+<p>HTTPS needs an <strong>SSL certificate</strong> (technically TLS, but everyone still says SSL) installed on your website's server.</p>
+
+<h2>Why it matters</h2>
+<ul>
+  <li><strong>Trust</strong>: a warning next to your name makes your business look careless or unsafe.</li>
+  <li><strong>Enquiries</strong>: people hesitate to fill in forms on "Not secure" pages.</li>
+  <li><strong>Google</strong>: HTTPS is a ranking signal, and Chrome highlights insecure pages more strongly than it used to.</li>
+  <li><strong>Payments</strong>: payment gateways and many features simply don't work without HTTPS.</li>
+</ul>
+
+<h2>The four common causes</h2>
+<h3>1. No SSL certificate at all</h3>
+<p>Older sites, or sites on cheap hosting set up years ago, may never have had one.</p>
+<h3>2. The certificate expired</h3>
+<p>Paid certificates last a year or so and must be renewed. If nobody renews it, visitors see a full-page warning, which is worse than "Not secure".</p>
+<h3>3. HTTPS exists, but HTTP still works</h3>
+<p>If <em>http://yourbusiness.in</em> doesn't redirect to <em>https://</em>, people following old links or typing the address see the insecure version.</p>
+<h3>4. Mixed content</h3>
+<p>The page loads over HTTPS, but some images, scripts or fonts still load from <em>http://</em> addresses. Browsers may block them or show a warning.</p>
+
+<h2>How to fix it</h2>
+<h3>Step 1: Get a certificate</h3>
+<p>Most good hosts include a free certificate from <strong>Let's Encrypt</strong>, which renews automatically. Look for "SSL" or "Let's Encrypt" in your hosting panel and switch it on. Platforms like Shopify, Wix and Vercel include SSL automatically. There's rarely a reason to pay for a basic certificate for a small business site.</p>
+<h3>Step 2: Redirect HTTP to HTTPS</h3>
+<p>Turn on "Force HTTPS" in your hosting panel, or ask your developer to add a permanent (301) redirect so every HTTP address goes to its HTTPS version.</p>
+<h3>Step 3: Fix mixed content</h3>
+<p>Open your site in Chrome, right-click, choose <strong>Inspect</strong> and look at the Console for "Mixed Content" warnings. Update those links to https. On WordPress, a search-and-replace of <em>http://yourdomain</em> with <em>https://yourdomain</em> in the database usually fixes most of them.</p>
+<h3>Step 4: Update the rest</h3>
+<ul>
+  <li>Make sure your <a href="/blog/google-search-console-beginners">Google Search Console</a> property covers the HTTPS version.</li>
+  <li>Update your website link on your Google Business Profile, Instagram and other profiles.</li>
+  <li>Check your sitemap lists https addresses.</li>
+</ul>
+
+<h2>How to check it's working</h2>
+<ul>
+  <li>Type <em>http://yourdomain</em> in a browser. It should switch to <em>https://</em> automatically.</li>
+  <li>The padlock (or settings icon) should appear with no warning.</li>
+  <li>Check a few inner pages and your contact form, not just the home page.</li>
+</ul>
+
+<h2>Prevent it happening again</h2>
+<p>Use a host that renews certificates automatically, and make sure someone gets the expiry emails. This is one of the small jobs covered by ongoing maintenance; see <a href="/blog/website-maintenance-cost-india">website maintenance cost in India</a> and our guide to <a href="/blog/website-security-backups">website security and backups</a>.</p>

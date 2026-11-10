@@ -1,0 +1,62 @@
+<!--
+{
+  "title": "Schema markup for small businesses, in plain English",
+  "slug": "schema-markup-small-business",
+  "date": "2026-12-07",
+  "category": "seo",
+  "mins": 5,
+  "keyword": "schema markup for small business",
+  "description": "What schema markup (structured data) is, which types matter for local businesses, blogs and online stores, how it can affect your Google listing, and how to add and test it.",
+  "cta": { "text": "Every site we build includes the right schema for your business, tested before launch.", "href": "/pricing", "label": "See website packages" }
+}
+-->
+<p>Schema markup sounds technical, but the idea is simple: it's a small piece of code that tells Google exactly what's on your page. This is a business, here's its address and opening hours. This is a product, here's its price. Google can then understand your site better, and sometimes show extra details in search results.</p>
+
+<h2>What schema does (and doesn't) do</h2>
+<ul>
+  <li><strong>Helps Google understand</strong> your business, products, articles and FAQs accurately.</li>
+  <li><strong>Can enable rich results</strong>: star ratings, prices and stock for products, breadcrumbs, event dates and more.</li>
+  <li><strong>Isn't a magic ranking boost</strong>. It helps Google interpret your pages; good content and reviews still do the heavy lifting.</li>
+</ul>
+<p>Google decides when to show rich results, and has narrowed some of them over time (FAQ rich results, for example, now appear for only a limited set of sites). It's still worth adding the right markup accurately.</p>
+
+<h2>The types that matter for small businesses</h2>
+<h3>LocalBusiness (or a more specific type)</h3>
+<p>For any business with a location or service area: name, address, phone, opening hours, website, logo and geo-coordinates. Use a specific type where one fits, such as Dentist, Restaurant, HomeAndConstructionBusiness or ProfessionalService.</p>
+<h3>Organization</h3>
+<p>Your brand's name, logo, social profiles and contact details, usually on the home page.</p>
+<h3>Product</h3>
+<p>For online stores: name, image, price, currency, availability and reviews. This can show price and stock information in search and Google Shopping surfaces.</p>
+<h3>Article or BlogPosting</h3>
+<p>For blog posts: headline, author, publish and update dates, and an image.</p>
+<h3>BreadcrumbList</h3>
+<p>Shows your page's place in the site (Home › Blog › Post), which can appear in search results instead of a long URL.</p>
+<h3>FAQPage</h3>
+<p>For genuine FAQ sections. Even where Google doesn't show FAQ rich results, it helps describe the content clearly.</p>
+
+<h2>What it looks like</h2>
+<p>Most schema is written in a format called JSON-LD, placed in a script tag in the page's code. A simplified example:</p>
+<blockquote><code>{ "@context": "https://schema.org", "@type": "Dentist", "name": "Smile Dental Care", "telephone": "+91 98XXXXXXXX", "address": { "@type": "PostalAddress", "streetAddress": "12, 2nd Avenue", "addressLocality": "Anna Nagar", "addressRegion": "Tamil Nadu", "postalCode": "600040", "addressCountry": "IN" } }</code></blockquote>
+<p>You don't need to write it by hand if your platform or developer handles it, but the details must match what's visible on your page and your Google Business Profile.</p>
+
+<h2>How to add it</h2>
+<ul>
+  <li><strong>WordPress</strong>: SEO plugins like Yoast or Rank Math add basic schema; check the business details are filled in.</li>
+  <li><strong>Shopify</strong>: most themes include product schema; check it's working and complete.</li>
+  <li><strong>Custom sites</strong>: your developer adds JSON-LD to the page templates.</li>
+</ul>
+
+<h2>How to test it</h2>
+<ol>
+  <li>Use Google's <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Rich Results Test</a> to check a page.</li>
+  <li>Use the <a href="https://validator.schema.org" target="_blank" rel="noopener">Schema Markup Validator</a> for a general check.</li>
+  <li>Watch the Enhancements section in <a href="/blog/google-search-console-beginners">Search Console</a> for errors across your site.</li>
+</ol>
+
+<h2>Rules to follow</h2>
+<ul>
+  <li>Mark up only what's visible on the page.</li>
+  <li>Don't add fake reviews or ratings to your own business schema.</li>
+  <li>Keep prices, hours and stock accurate.</li>
+</ul>
+<p>Schema is one part of the technical foundation. For the rest, see <a href="/blog/seo-for-new-website">SEO for a brand-new website</a>.</p>

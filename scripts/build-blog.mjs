@@ -147,6 +147,7 @@ a:hover{color:var(--blue)}
 .prose table{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:16px;background:#fff;border-radius:14px;overflow:hidden}
 .prose th,.prose td{text-align:left;padding:12px 16px;border-bottom:1px solid #EEE;vertical-align:top}
 .prose th{background:var(--card);font-weight:600;color:var(--ink)}
+@media (max-width:640px){.prose table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:15px}.prose th,.prose td{padding:10px 12px;min-width:110px}}
 .prose blockquote{margin:24px 0;padding:18px 22px;border-left:4px solid var(--yellow);background:#fff;border-radius:0 14px 14px 0;color:var(--ink)}
 .table-scroll{overflow-x:auto}
 .cta{margin-top:44px;border-radius:20px;background:var(--ink);color:#fff;padding:clamp(22px,3vw,34px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
