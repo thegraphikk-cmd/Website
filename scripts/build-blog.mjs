@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { openTemplate } from './bundle-io.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content', 'posts');
@@ -500,15 +501,12 @@ fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="
 
 // The home page (a bundled page) has "latest articles" cards titled after posts.
 // Point each card at its post once that post is live; until then it keeps its
-// current link. The template is JSON inside a script tag, so decode, edit, re-encode.
+// current link. The template lives in assets/bundles/ (see scripts/bundle-io.mjs).
 function updateHomeCards() {
-  const file = path.join(ROOT, 'index.html');
-  const text = fs.readFileSync(file, 'utf8');
-  const re = /(<script type="__bundler\/template">\s*)([\s\S]*?)(\s*<\/script>)/;
-  const m = text.match(re);
-  if (!m) return;
+  const page = openTemplate('index.html');
+  if (!page) return;
   const bySlugTitle = new Map(listed.map(p => [p.title, p.slug]));
-  const tpl = JSON.parse(m[2]);
+  const tpl = page.template;
   const out = tpl.replace(/<a href="\/blog\/([a-z0-9-]+)"([^>]*)>([\s\S]*?)<\/a>/g, (all, slug, attrs, inner) => {
     const h3 = inner.match(/<h3[^>]*>([\s\S]*?)<\/h3>/);
     if (!h3) return all;
@@ -516,8 +514,7 @@ function updateHomeCards() {
     return target && target !== slug ? `<a href="/blog/${target}"${attrs}>${inner}</a>` : all;
   });
   if (out === tpl) return;
-  const encoded = JSON.stringify(out).replace(/<\//g, '<\\u002F');
-  fs.writeFileSync(file, text.replace(re, (all, a, b, c) => a + encoded + c));
+  page.save(out);
   console.log('home page article cards updated');
 }
 updateHomeCards();

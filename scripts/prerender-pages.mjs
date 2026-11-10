@@ -33,7 +33,11 @@ const TAB_PANELS = {
   'legal.html': { tabs: 'button[role="tab"]', panel: 'div[data-screen-label="Legal / Policy"]' },
 };
 
-const FONT_LINK = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">';
+// Loaded without blocking first paint (text shows in the fallback font for a
+// moment, then swaps to Geist): the blocking stylesheet held up LCP by ~1.5 s.
+const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap';
+const FONT_LINK = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+  + `<link rel="stylesheet" href="${FONT_CSS}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="${FONT_CSS}"></noscript>`;
 // The snapshot is rendered at desktop width. SiteHeader picks its layout in
 // JS (innerWidth < 900), so mirror that breakpoint in CSS for phones. The
 // image-slot rules copy the element's own shadow-DOM :host styles.
@@ -152,7 +156,8 @@ export async function launchChrome() {
 async function capture(chrome, name) {
   const page = await chrome.openPage();
   try {
-    await page.navigate(pathToFileURL(path.join(ROOT, name)).href);
+    // Served over http, not file://: split pages fetch their bundle data.
+    await page.navigate(BASE_URL + '/' + name + '?live');
     const ready = await page.waitFor(`!!document.querySelector('#dc-root .sc-host') && !document.querySelector('.sc-placeholder') && document.fonts.status === 'loaded'`);
     if (!ready) throw new Error(name + ': page did not finish rendering');
     await page.evaluate(`(async () => {
@@ -172,6 +177,7 @@ async function capture(chrome, name) {
         img.src = slot.getAttribute('src');
         img.alt = slot.getAttribute('alt') || '';
         if (i > 0) img.loading = 'lazy';
+        else img.setAttribute('fetchpriority', 'high');
         slot.appendChild(img);
       });
       if (cfg) {
@@ -225,6 +231,23 @@ function extractImages(html) {
   });
 }
 
+// Minimal static server for the site root, so pages load as they do on Vercel.
+let BASE_URL = '';
+async function serveRoot() {
+  const http = await import('node:http');
+  const TYPES = { '.html': 'text/html', '.json': 'application/json', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
+  const server = http.createServer((req, res) => {
+    const rel = decodeURIComponent(new URL(req.url, 'http://x').pathname).replace(/^\/+/, '');
+    const file = path.join(ROOT, rel || 'index.html');
+    if (!file.startsWith(ROOT) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); res.end(); return; }
+    res.writeHead(200, { 'content-type': TYPES[path.extname(file)] || 'application/octet-stream' });
+    fs.createReadStream(file).pipe(res);
+  });
+  await new Promise((r) => server.listen(0, '127.0.0.1', r));
+  BASE_URL = 'http://127.0.0.1:' + server.address().port;
+  return server;
+}
+
 // Returns [start, end] of the region to replace: the marked snapshot from a
 // previous run, or else the original shell markup matched by `firstRun`.
 function region(html, start, end, firstRun) {
@@ -272,10 +295,12 @@ async function prerender(chrome, name) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const names = process.argv.slice(2);
+  const server = await serveRoot();
   const chrome = await launchChrome();
   try {
     for (const name of names.length ? names : PAGES) await prerender(chrome, name);
   } finally {
     await chrome.close();
+    server.close();
   }
 }
