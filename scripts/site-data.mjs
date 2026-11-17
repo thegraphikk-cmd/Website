@@ -7,7 +7,9 @@ export const AUTHOR = 'Kavin Arulraj';
 
 // Official profiles. Add Instagram, Facebook, YouTube, Behance, the Google
 // Business Profile share link, Clutch etc. here as they are confirmed.
+export const MAPS_URL = 'https://maps.google.com/?cid=16866634370633899827'; // Google Business Profile
 export const SAME_AS = [
+  MAPS_URL,
   'https://in.linkedin.com/company/the-graphikk',
 ];
 
@@ -28,6 +30,7 @@ export const ORG = {
   areaServed: [{ '@type': 'City', name: 'Chennai' }, { '@type': 'State', name: 'Tamil Nadu' }, { '@type': 'Country', name: 'India' }],
   founder: { '@id': `${SITE}/#founder` },
   sameAs: SAME_AS,
+  hasMap: MAPS_URL,
   knowsLanguage: ['en', 'ta'],
   currenciesAccepted: 'INR',
   contactPoint: {
