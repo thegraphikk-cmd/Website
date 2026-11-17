@@ -20,13 +20,57 @@ Key facts:
 - [Process](https://thegraphikk.com/process): the seven steps from first call to launch
 - [Portfolio](https://thegraphikk.com/portfolio): selected work
 - [Industries](https://thegraphikk.com/industries): local businesses, creators, D2C brands and e-commerce
-- [About](https://thegraphikk.com/about): the studio and team
+- [About](https://thegraphikk.com/about): the studio, founder and how we work
+- [Portfolio websites](https://thegraphikk.com/portfolio-websites): personal brand and portfolio sites for individuals
+- [Locations](https://thegraphikk.com/locations): Chennai and the cities we work with across India
 - [FAQ](https://thegraphikk.com/faq): common questions on pricing, process and support
 - [Contact](https://thegraphikk.com/contact): request a quote
 
 ## Guides
 
-- [Blog](https://thegraphikk.com/blog): guides on website costs, local SEO, Shopify and Google Business Profile for Indian businesses
-- [Website design cost in Chennai](https://thegraphikk.com/blog/website-design-cost-chennai)
-- [Local SEO checklist for Chennai](https://thegraphikk.com/blog/local-seo-chennai-checklist)
-- [How much does a website cost in India](https://thegraphikk.com/blog/website-cost-in-india)
+Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com/blog), written by Kavin Arulraj.
+
+### Web design guides
+
+- [Business email on your own domain: Google Workspace vs Zoho Mail (India prices)](https://thegraphikk.com/blog/business-email-on-your-domain-india): Why an email like you@yourbusiness.in builds trust, and how Google Workspace, Zoho Mail and hosting email compare on price, features and ease of use for Indian small businesses.
+- [How to choose a domain name for your business in India](https://thegraphikk.com/blog/how-to-choose-domain-name-india): A practical guide to picking a business domain name in India: length, spelling, keywords, .com vs .in, checking trademarks and social handles, and the mistakes that are expensive to undo.
+- [How many pages does a small business website need?](https://thegraphikk.com/blog/how-many-pages-small-business-website): How many pages a small business website really needs, which pages matter most, why one page per service helps SEO, and when a one-page site is enough.
+- [Salon and beauty websites: getting more bookings online](https://thegraphikk.com/blog/salon-website-with-booking): What salons, spas, makeup artists and beauty studios in India should put on their website to get more bookings: service menus with prices, WhatsApp booking, galleries, reviews and Google Maps.
+- [How to choose a web design company in Chennai: 12 questions to ask](https://thegraphikk.com/blog/how-to-choose-web-design-company-chennai): A practical way to compare web design companies in Chennai: what to check in their portfolio, the questions to ask, red flags, and how to compare quotes fairly.
+- [Domain and hosting cost in India: what you actually pay each year](https://thegraphikk.com/blog/domain-and-hosting-cost-india): How much a domain name and web hosting cost in India per year, the difference between shared, cloud and managed hosting, renewal traps to avoid, and what a small business really needs.
+- [How to add a WhatsApp chat button to your website](https://thegraphikk.com/blog/whatsapp-button-on-website): How to add a WhatsApp chat button or enquiry form to your website using a wa.me link, with a pre-filled message, plus tips for placement, tracking and when to use the WhatsApp Business API.
+- [Portfolio website for freelancers in India: what to include to win clients](https://thegraphikk.com/blog/portfolio-website-for-freelancers): How freelancers in India can use a personal portfolio website to win better clients: what pages to include, how to write case studies, pricing, SEO for your name and common mistakes.
+- [Does your restaurant need a website if you're on Swiggy and Zomato?](https://thegraphikk.com/blog/restaurant-website-india): Why restaurants and cafés in India still benefit from their own website alongside Swiggy, Zomato and Instagram, what to put on it, and how it helps with direct orders, bookings and Google Maps.
+- [Landing page vs website: where should your Google and Meta ads go?](https://thegraphikk.com/blog/landing-page-vs-website-for-ads): Should your Google Ads and Instagram ads send people to your home page or a dedicated landing page? The difference, when each works, and what a high-converting landing page needs.
+- [Wix vs WordPress vs custom website: which is right for your business?](https://thegraphikk.com/blog/wix-vs-wordpress-vs-custom): Comparing website builders like Wix, WordPress and custom-built websites for Indian businesses: cost, ease of editing, SEO, speed, flexibility and long-term ownership.
+- [Do I need a website if I already have Instagram?](https://thegraphikk.com/blog/do-i-need-a-website-if-i-have-instagram): Instagram is great for reach, but it can't rank on Google, take bookings reliably or prove you're real. Here's when a small business in India needs a website, and when it can wait.
+- [Clinic and doctor websites in India: what to include (and avoid)](https://thegraphikk.com/blog/clinic-website-india): What a clinic or doctor's website in India should include: appointment booking, WhatsApp, doctor profiles, timings and local SEO, plus what to avoid under medical advertising guidelines.
+- [Website maintenance cost in India: what you pay for and why](https://thegraphikk.com/blog/website-maintenance-cost-india): What website maintenance includes, typical yearly and monthly costs in India for business sites and online stores, and how to avoid paying for maintenance you don't need.
+- [How long does it take to build a website?](https://thegraphikk.com/blog/how-long-to-build-a-website): Realistic timelines for landing pages, business websites, online stores and redesigns, what happens each week, and the things that usually cause delays.
+- [Freelancer vs agency: who should build your business website?](https://thegraphikk.com/blog/freelancer-vs-agency-website): The real trade-offs between hiring a freelancer, a small studio or an agency to build your website in India: cost, speed, quality, support and risk, and how to choose.
+- [Hiring a web designer or agency? A checklist of what to prepare](https://thegraphikk.com/blog/what-to-prepare-before-hiring-a-web-designer): The information, content and decisions to get ready before you hire a web designer, so your website is cheaper, faster to build and actually does its job.
+- [Website design cost in Chennai: 2026 price guide](https://thegraphikk.com/blog/website-design-cost-chennai): What Chennai businesses actually pay for a website in 2026: freelancer, agency and template prices for business sites, online stores and landing pages, and what should be included.
+- [How much does a website cost in India in 2026?](https://thegraphikk.com/blog/website-cost-in-india): Real price ranges by type of site, what drives the cost, and where you can save.
+
+### SEO & performance
+
+- [Google Search Console for beginners: a small business guide](https://thegraphikk.com/blog/google-search-console-beginners): What Google Search Console is, how to set it up, and the four reports a small business owner should check each month to see how people find your website on Google.
+- [How to get more Google reviews for your business (without breaking the rules)](https://thegraphikk.com/blog/get-more-google-reviews): Practical ways for Indian businesses to get more Google reviews: your review link, when and how to ask, WhatsApp templates, replying to reviews, and what Google's rules forbid.
+- [Should your business website be in Tamil and English?](https://thegraphikk.com/blog/tamil-english-bilingual-website): When a Tamil Nadu business benefits from a Tamil and English website, how to set up bilingual pages properly for Google, and the translation mistakes to avoid.
+- [Redesigning a website without losing your Google rankings](https://thegraphikk.com/blog/redesign-website-without-losing-seo): A checklist for redesigning or rebuilding a website while keeping your Google rankings: crawling the old site, keeping URLs, 301 redirect maps, content, launch-day checks and monitoring.
+- [Google Business Profile video verification: what to record](https://thegraphikk.com/blog/google-business-profile-video-verification): What to show in a Google Business Profile verification video, how to record it for a shop or a home-based service business, and what to do if Google rejects it.
+- [.in or .com: which is better for an Indian business in 2026?](https://thegraphikk.com/blog/in-vs-com-domain-india): Short answer: take the .com if it's free and you may ever sell outside India; take .in if you only serve India. Both rank equally well on Google India. Here's how to decide.
+- [Why is my business not showing on Google Maps? 9 fixes](https://thegraphikk.com/blog/business-not-showing-on-google-maps): If your business doesn't appear on Google Maps, one of these nine problems is usually the cause. How to diagnose verification issues, suspensions, duplicates and weak rankings, and fix them.
+- [Local SEO for Chennai businesses: a practical checklist](https://thegraphikk.com/blog/local-seo-chennai-checklist): A step-by-step local SEO checklist for Chennai businesses: Google Business Profile, reviews, location pages, consistent listings and the website fixes that help you show up in 'near me' searches.
+- [How to add your business to Google Maps in India (step by step)](https://thegraphikk.com/blog/add-business-to-google-maps): A step-by-step guide to creating and verifying a Google Business Profile in India, choosing the right category, setting a service area and getting found on Google Maps.
+- [Core Web Vitals: what a fast site actually needs](https://thegraphikk.com/blog/core-web-vitals-fast-website): A plain-English guide to Core Web Vitals (LCP, INP and CLS), why your website is slow on mobile in India, and the fixes that make the biggest difference.
+
+### E-commerce
+
+- [Shopify pricing in India (2026): plans, fees and the real monthly cost](https://thegraphikk.com/blog/shopify-pricing-india): Shopify's India plans in rupees, plus the costs that aren't on the pricing page: GST, transaction fees, payment gateway charges, apps and themes, with three realistic monthly budgets.
+- [Shopify vs WooCommerce for Indian brands: which should you choose?](https://thegraphikk.com/blog/shopify-vs-woocommerce-india): An honest comparison of Shopify and WooCommerce for Indian sellers: costs in rupees, UPI and COD, GST invoices, shipping, speed and SEO, and which one suits your store.
+- [UPI, cards or COD: setting up payments for an Indian website](https://thegraphikk.com/blog/payment-gateway-for-website-india): How to accept online payments on your website in India: choosing a payment gateway, documents for KYC, UPI vs cards vs COD, fees to compare and how to set it up on Shopify or WooCommerce.
+- [Cash on delivery on Shopify in India: charges, limits and reducing RTO](https://thegraphikk.com/blog/cod-on-shopify-india): How to set up cash on delivery on a Shopify store in India, add COD charges, limit COD by order value or pincode, and reduce return-to-origin (RTO) losses without losing sales.
+- [How to set up GST on Shopify in India (CGST, SGST and IGST)](https://thegraphikk.com/blog/shopify-gst-setup-india): How to configure GST on a Shopify store in India: tax-inclusive prices, CGST + SGST for same-state orders, IGST for other states, multiple GST slabs, HSN codes and GST-compliant invoices.
+- [How much does an e-commerce website cost in India?](https://thegraphikk.com/blog/ecommerce-website-cost-india): What it really costs to build and run an online store in India: build prices by store size, platform fees, payment gateway charges, apps, shipping and the yearly running costs most quotes leave out.
+- [How to speed up a Shopify store on mobile](https://thegraphikk.com/blog/speed-up-shopify-store-mobile): Practical ways to make a slow Shopify store faster on mobile: auditing apps, compressing images, simplifying the theme, cutting third-party scripts and measuring the results.

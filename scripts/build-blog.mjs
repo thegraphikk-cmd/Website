@@ -21,13 +21,12 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { openTemplate } from './bundle-io.mjs';
+import { SITE, AUTHOR, ORG, FOUNDER, WEBSITE } from './site-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content', 'posts');
 const PAGES_SRC = path.join(ROOT, 'content', 'pages');
 const OUT = path.join(ROOT, 'blog');
-const SITE = 'https://thegraphikk.com';
-const AUTHOR = 'Kavin Arulraj';
 
 const today = process.env.BLOG_TODAY || new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10);
 
@@ -292,8 +291,8 @@ function postPage(p, related, liveSlugs, allSlugs) {
       '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.title, description: p.description,
       datePublished: p.date, dateModified: p.updated || p.date, mainEntityOfPage: url, url,
       image: thumbUrl(p.slug, true) || `${SITE}/assets/img/og-blog.png`, inLanguage: 'en-IN',
-      author: { '@type': 'Person', name: AUTHOR, url: `${SITE}/about` },
-      publisher: { '@type': 'Organization', name: 'The Graphikk', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo.png` } },
+      author: { '@type': 'Person', '@id': FOUNDER['@id'], name: AUTHOR, url: `${SITE}/about` },
+      publisher: { '@type': 'Organization', '@id': ORG['@id'], name: 'The Graphikk', url: SITE + '/', logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo.png` } },
     },
     {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -324,34 +323,7 @@ ${related.length ? `<section class="section"><h2 style="margin:0 0 24px;font-wei
   return page({ title: `${p.title} — The Graphikk`, description: p.description, canonical: url, ogType: 'article', jsonld, body, image: thumbUrl(p.slug, true) || undefined });
 }
 
-// The business itself, for landing-page schema. Keep in step with the
-// ProfessionalService block in index.html.
-const ORG = {
-  '@type': 'ProfessionalService', '@id': `${SITE}/#business`, name: 'The Graphikk', url: SITE + '/',
-  logo: `${SITE}/assets/img/logo.png`, image: `${SITE}/assets/img/og-blog.png`,
-  description: 'Web design and development company in Chennai building fast, SEO-ready websites and online stores for businesses across India.',
-  email: 'thegraphikk@gmail.com', telephone: '+91-70102-66975', priceRange: '₹20,000+',
-  address: { '@type': 'PostalAddress', addressLocality: 'Chennai', addressRegion: 'Tamil Nadu', addressCountry: 'IN' },
-  areaServed: [{ '@type': 'City', name: 'Chennai' }, { '@type': 'Country', name: 'India' }],
-  founder: { '@type': 'Person', name: AUTHOR },
-  knowsLanguage: ['en', 'ta'],
-  currenciesAccepted: 'INR',
-  contactPoint: {
-    '@type': 'ContactPoint', contactType: 'sales', telephone: '+91-70102-66975', email: 'thegraphikk@gmail.com',
-    areaServed: 'IN', availableLanguage: ['English', 'Tamil'],
-  },
-  knowsAbout: ['Web design', 'Web development', 'E-commerce websites', 'Shopify', 'WooCommerce', 'Search engine optimisation', 'Local SEO', 'Google Business Profile', 'Core Web Vitals'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog', name: 'Website design and development packages',
-    itemListElement: [
-      ['Business website', 40000], ['E-commerce website', 50000], ['Landing page', 20000],
-      ['Portfolio website', 20000], ['SEO and ads management', 30000, 'per month'],
-    ].map(([name, minPrice, unitText]) => ({
-      '@type': 'Offer', itemOffered: { '@type': 'Service', name },
-      priceSpecification: { '@type': 'PriceSpecification', minPrice, priceCurrency: 'INR', ...(unitText ? { unitText } : {}) },
-    })),
-  },
-};
+// The business, founder and website entities come from scripts/site-data.mjs.
 
 function readLandingPages() {
   if (!fs.existsSync(PAGES_SRC)) return [];
@@ -375,9 +347,10 @@ function landingPage(p, liveSlugs, allSlugs) {
   const cta = p.cta || { text: 'Get a fixed written quote for your website in 24 hours.', href: '/contact', label: 'Get a Quote' };
   const jsonld = [
     { '@context': 'https://schema.org', ...ORG },
+    { '@context': 'https://schema.org', ...FOUNDER },
     {
       '@context': 'https://schema.org', '@type': 'WebPage', name: p.title, description: p.description, url,
-      inLanguage: 'en-IN', about: { '@id': ORG['@id'] }, isPartOf: { '@type': 'WebSite', name: 'The Graphikk', url: SITE + '/' },
+      inLanguage: 'en-IN', about: { '@id': ORG['@id'] }, isPartOf: { '@id': WEBSITE['@id'] },
     },
     {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -407,7 +380,7 @@ ${html.replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/tabl
   </div>
 </div>
 </article>`;
-  return page({ title: p.title, description: p.description, canonical: url, jsonld, body, active: null });
+  return page({ title: p.title, description: p.description, canonical: url, jsonld, body, active: null, image: `${SITE}/assets/img/og-site.jpg` });
 }
 
 function indexPage(list) {
@@ -499,6 +472,19 @@ const urls = [
   ...listed.map(p => `  <url><loc>${SITE}/blog/${p.slug}</loc><lastmod>${p.updated || p.date}</lastmod><priority>0.6</priority></url>`),
 ];
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
+
+// llms.txt: a plain-text guide to the site for AI assistants (llmstxt.org).
+// The intro is hand-written in content/llms-intro.md; the guide list is every
+// live post, grouped by category, so it grows as posts publish.
+{
+  const intro = fs.readFileSync(path.join(ROOT, 'content', 'llms-intro.md'), 'utf8').trimEnd();
+  const groups = Object.entries(CATS).map(([cat, label]) => {
+    const items = listed.filter(p => p.category === cat)
+      .map(p => `- [${p.title}](${SITE}/blog/${p.slug}): ${p.description}`);
+    return items.length ? `### ${label}\n\n${items.join('\n')}` : '';
+  }).filter(Boolean);
+  fs.writeFileSync(path.join(ROOT, 'llms.txt'), `${intro}\n\n## Guides\n\nPractical, India-specific guides from The Graphikk blog (${SITE}/blog), written by ${AUTHOR}.\n\n${groups.join('\n\n')}\n`);
+}
 
 // The home page (a bundled page) has "latest articles" cards titled after posts.
 // Point each card at its post once that post is live; until then it keeps its
