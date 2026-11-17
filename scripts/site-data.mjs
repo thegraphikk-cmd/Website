@@ -25,7 +25,8 @@ export const ORG = {
   logo: `${SITE}/assets/img/logo.png`, image: `${SITE}/assets/img/og-site.jpg`,
   description: 'Web design and development company in Chennai building fast, SEO-ready websites and online stores for businesses across India.',
   slogan: 'Websites that look sharp and actually sell',
-  email: 'thegraphikk@gmail.com', telephone: '+91-70102-66975', priceRange: '₹20,000+',
+  // No public phone number: customers contact the studio by WhatsApp chat or email.
+  email: 'thegraphikk@gmail.com', priceRange: '₹20,000+',
   address: { '@type': 'PostalAddress', addressLocality: 'Chennai', addressRegion: 'Tamil Nadu', addressCountry: 'IN' },
   areaServed: [{ '@type': 'City', name: 'Chennai' }, { '@type': 'State', name: 'Tamil Nadu' }, { '@type': 'Country', name: 'India' }],
   founder: { '@id': `${SITE}/#founder` },
@@ -34,7 +35,8 @@ export const ORG = {
   knowsLanguage: ['en', 'ta'],
   currenciesAccepted: 'INR',
   contactPoint: {
-    '@type': 'ContactPoint', contactType: 'sales', telephone: '+91-70102-66975', email: 'thegraphikk@gmail.com',
+    '@type': 'ContactPoint', contactType: 'sales', email: 'thegraphikk@gmail.com',
+    url: `${SITE}/contact`,
     areaServed: 'IN', availableLanguage: ['English', 'Tamil'],
   },
   knowsAbout: ['Web design', 'Web development', 'E-commerce websites', 'Shopify', 'WooCommerce', 'Search engine optimisation', 'Local SEO', 'Google Business Profile', 'Core Web Vitals'],

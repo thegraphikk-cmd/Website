@@ -10,7 +10,7 @@ Key facts:
 - Prices (plus 18% GST): websites from ₹40,000 (up to 50 pages), online stores from ₹50,000 (up to 50 products), landing pages from ₹20,000, SEO from ₹35,000/month, ads management from ₹30,000/month.
 - Delivery: websites 2–3 weeks, online stores 4–5 weeks, landing pages 1–2 weeks.
 - Languages: English and Tamil (bilingual websites available).
-- Contact: thegraphikk@gmail.com, WhatsApp +91 70102 66975, https://thegraphikk.com/contact
+- Contact: WhatsApp chat or email thegraphikk@gmail.com, both linked from https://thegraphikk.com/contact
 
 ## Main pages
 
