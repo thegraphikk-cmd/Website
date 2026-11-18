@@ -32,6 +32,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### Web design guides
 
+- [School websites in India: what parents look for (and what to include)](https://thegraphikk.com/blog/school-website-india): What parents check on a school website before admissions, the pages every Indian school needs, mandatory disclosures, and how to keep the site fast and easy to update.
 - [Business email on your own domain: Google Workspace vs Zoho Mail (India prices)](https://thegraphikk.com/blog/business-email-on-your-domain-india): Why an email like you@yourbusiness.in builds trust, and how Google Workspace, Zoho Mail and hosting email compare on price, features and ease of use for Indian small businesses.
 - [How to choose a domain name for your business in India](https://thegraphikk.com/blog/how-to-choose-domain-name-india): A practical guide to picking a business domain name in India: length, spelling, keywords, .com vs .in, checking trademarks and social handles, and the mistakes that are expensive to undo.
 - [How many pages does a small business website need?](https://thegraphikk.com/blog/how-many-pages-small-business-website): How many pages a small business website really needs, which pages matter most, why one page per service helps SEO, and when a one-page site is enough.
