@@ -68,6 +68,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### E-commerce
 
+- [Amazon, Flipkart or your own website: where should your brand sell?](https://thegraphikk.com/blog/sell-on-amazon-or-own-website-india): Marketplaces vs your own online store for Indian brands: fees, control, customer data, traffic and margins, and why most growing brands end up doing both.
 - [Shopify pricing in India (2026): plans, fees and the real monthly cost](https://thegraphikk.com/blog/shopify-pricing-india): Shopify's India plans in rupees, plus the costs that aren't on the pricing page: GST, transaction fees, payment gateway charges, apps and themes, with three realistic monthly budgets.
 - [Shopify vs WooCommerce for Indian brands: which should you choose?](https://thegraphikk.com/blog/shopify-vs-woocommerce-india): An honest comparison of Shopify and WooCommerce for Indian sellers: costs in rupees, UPI and COD, GST invoices, shipping, speed and SEO, and which one suits your store.
 - [UPI, cards or COD: setting up payments for an Indian website](https://thegraphikk.com/blog/payment-gateway-for-website-india): How to accept online payments on your website in India: choosing a payment gateway, documents for KYC, UPI vs cards vs COD, fees to compare and how to set it up on Shopify or WooCommerce.
