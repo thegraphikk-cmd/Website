@@ -55,6 +55,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### SEO & performance
 
+- [Why your website says "Not secure" (and how to fix it)](https://thegraphikk.com/blog/website-not-secure-ssl): What the "Not secure" warning in Chrome means, why it costs you enquiries and rankings, and how to fix it with a free SSL certificate, HTTPS redirects and mixed-content checks.
 - [Google Search Console for beginners: a small business guide](https://thegraphikk.com/blog/google-search-console-beginners): What Google Search Console is, how to set it up, and the four reports a small business owner should check each month to see how people find your website on Google.
 - [How to get more Google reviews for your business (without breaking the rules)](https://thegraphikk.com/blog/get-more-google-reviews): Practical ways for Indian businesses to get more Google reviews: your review link, when and how to ask, WhatsApp templates, replying to reviews, and what Google's rules forbid.
 - [Should your business website be in Tamil and English?](https://thegraphikk.com/blog/tamil-english-bilingual-website): When a Tamil Nadu business benefits from a Tamil and English website, how to set up bilingual pages properly for Google, and the translation mistakes to avoid.
