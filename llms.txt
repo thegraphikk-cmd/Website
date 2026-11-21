@@ -32,6 +32,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### Web design guides
 
+- [Website launch checklist: 25 things to check before going live](https://thegraphikk.com/blog/website-launch-checklist): A practical pre-launch checklist for small business websites: content, forms, mobile, speed, SEO basics, analytics, legal pages and the things people forget until a customer points them out.
 - [School websites in India: what parents look for (and what to include)](https://thegraphikk.com/blog/school-website-india): What parents check on a school website before admissions, the pages every Indian school needs, mandatory disclosures, and how to keep the site fast and easy to update.
 - [Business email on your own domain: Google Workspace vs Zoho Mail (India prices)](https://thegraphikk.com/blog/business-email-on-your-domain-india): Why an email like you@yourbusiness.in builds trust, and how Google Workspace, Zoho Mail and hosting email compare on price, features and ease of use for Indian small businesses.
 - [How to choose a domain name for your business in India](https://thegraphikk.com/blog/how-to-choose-domain-name-india): A practical guide to picking a business domain name in India: length, spelling, keywords, .com vs .in, checking trademarks and social handles, and the mistakes that are expensive to undo.
