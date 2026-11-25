@@ -57,6 +57,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### SEO & performance
 
+- [SEO for a brand-new website: what to do in the first 90 days](https://thegraphikk.com/blog/seo-for-new-website): A realistic 90-day SEO plan for a new small business website in India: getting indexed, local SEO, the pages that matter, content, links and how long results really take.
 - [Google Business Profile suspended? Why it happens and how to fix it](https://thegraphikk.com/blog/google-business-profile-suspended): The common reasons Google suspends Business Profiles, the difference between soft and hard suspensions, and a step-by-step way to appeal and get reinstated.
 - [Why your website says "Not secure" (and how to fix it)](https://thegraphikk.com/blog/website-not-secure-ssl): What the "Not secure" warning in Chrome means, why it costs you enquiries and rankings, and how to fix it with a free SSL certificate, HTTPS redirects and mixed-content checks.
 - [Google Search Console for beginners: a small business guide](https://thegraphikk.com/blog/google-search-console-beginners): What Google Search Console is, how to set it up, and the four reports a small business owner should check each month to see how people find your website on Google.
