@@ -74,6 +74,7 @@ Practical, India-specific guides from The Graphikk blog (https://thegraphikk.com
 
 ### E-commerce
 
+- [WhatsApp catalogue vs an online store: when should you upgrade?](https://thegraphikk.com/blog/whatsapp-catalogue-vs-online-store): Selling through WhatsApp Business and Instagram works until it doesn't. The signs you've outgrown manual orders, what an online store changes, and how to keep WhatsApp at the centre.
 - [Shipping for small online stores in India: aggregators, couriers and costs](https://thegraphikk.com/blog/shipping-for-online-store-india): How small Indian online stores ship orders: aggregators like Shiprocket vs direct courier accounts, how shipping is priced (weight slabs, volumetric weight, zones, COD fees) and how to set shipping charges.
 - [Amazon, Flipkart or your own website: where should your brand sell?](https://thegraphikk.com/blog/sell-on-amazon-or-own-website-india): Marketplaces vs your own online store for Indian brands: fees, control, customer data, traffic and margins, and why most growing brands end up doing both.
 - [Shopify pricing in India (2026): plans, fees and the real monthly cost](https://thegraphikk.com/blog/shopify-pricing-india): Shopify's India plans in rupees, plus the costs that aren't on the pricing page: GST, transaction fees, payment gateway charges, apps and themes, with three realistic monthly budgets.
